@@ -2,12 +2,20 @@
 .idea
 .DS_Store
 src/Template2
-src/hw1/XB Niloofar.ttf
-src/hw1/sharif-logo.png
-src/hw1/hw1.synctex.gz
-src/hw1/hw1.xdv
-src/hw1/hw1.out
-src/hw1/hw1.log
-src/hw1/hw1.fls
-src/hw1/hw1.fdb_latexmk
-src/hw1/hw1.aux
+
+### TEX ###
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.xdv
+*.fls
+*.fdb_latexmk
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+/.idea
