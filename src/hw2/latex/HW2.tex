@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{HomeWorkTemplate}
+\usepackage{circuitikz}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor} % Load xcolor before hyperref and listings
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{fontspec}
+\usepackage{xepersian}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{changepage}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+% \usepackage{listings} % Add the listings package
+
+\usetikzlibrary{arrows,automata}
+\usetikzlibrary{circuits.logic.US}
+\settextfont{XB Niloofar}
+
+\newcounter{problemcounter}
+\newcounter{subproblemcounter}
+\setcounter{problemcounter}{1}
+\setcounter{subproblemcounter}{1}
+
+% \lstset{ % Configuration for listings package
+%     language=Python,
+%     basicstyle=\ttfamily\small,
+%     breaklines=true,
+%     numbers=left,
+%     numberstyle=\small,
+%     frame=single,
+%     showspaces=false,
+%     showstringspaces=false,
+%     keywordstyle=\color{blue},
+%     commentstyle=\color{green!50!black},
+%     stringstyle=\color{red}
+% }
+\newcommand{\problem}[1]
+{
+    \subsection*{
+        پرسش
+        \arabic{problemcounter} 
+        \stepcounter{problemcounter}
+        \setcounter{subproblemcounter}{1}
+        #1
+    }
+}
+\newcommand{\subproblem}{
+    \textbf{\harfi{subproblemcounter})}\stepcounter{subproblemcounter}
+}
+
+\begin{document}
+\handout
+{آمار و کاربرد ها}
+{تمرین سری دو}
+{کژال باغستانی}
+{۴۰۱۱۰۰۰۷۱}
+
+\input{q1.tex}
+\input{q2.tex}
+\input{q3.tex}
+\input{q4.tex}
+% \input{q5.tex}
+% \input{q6.tex}
+
+\end{document}
+

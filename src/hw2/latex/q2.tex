@@ -1,0 +1,22 @@
+\problem{}
+\subproblem{}
+بیان \\
+\subproblem{}
+برهان:\\
+می خواهیم نشان دهیم :\\ 
+\[ \forall \epsilon >0 \quad \quad \lim_{{n \to \infty}} P(\lvert \bar{X} - \mu \rvert > \epsilon) = 0 \]
+با توجه به نامساوی مارکوف داریم\\
+\[P(X>a)<\frac{E[X]}{a} \] 
+پس داریم
+\[P((\bar{X} - \mu)^2>a^2)<\frac{E[( \bar{X} - \mu)^2]}{a^2} \] 
+که این یعنی
+\[P((\bar{X} - \mu)^2>a^2)<\frac{var(\bar{X})}{a^2} \] 
+و با توجه به $i.i.d$ بودن $Xi$ ها 
+\[var(\bar{X}) = \frac{\sigma^2}{n}\]
+\[ P(\lvert \bar{X} - \mu \rvert > \epsilon ) < \frac{\sigma^2}{n\epsilon} \quad for \quad fixed \quad \epsilon \quad and \quad  \sigma<\infty\] 
+پس:
+\[0 < \lim_{{n \to \infty}} P(\lvert \bar{X} - \mu \rvert > \epsilon) <\lim_{{n \to \infty}} \frac{\sigma^2}{n\epsilon} = 0 \]
+که ثابت میشود:
+\[ \forall \epsilon >0 \quad \quad \lim_{{n \to \infty}} P(\lvert \bar{X} - \mu \rvert > \epsilon) = 0 \]
+
+\subproblem{}
