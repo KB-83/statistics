@@ -3,6 +3,19 @@
 که با توجه به تعریف $F_X(x)$ داریم:
 \[M_X(t) =  \int_{\mathbb{R}^{n}}{\frac{1}{\sqrt{(2\pi)^n det(\Sigma)}} e^{-\frac{1}{2}(X-\mu)^{T}\Sigma^{-1}(X-\mu)} e^{t^{T}X}} dX\]
 \[ = \int_{\mathbb{R}^{n}}{\frac{1}{\sqrt{(2\pi)^n det(\Sigma)}} e^{t^{T}X-\frac{1}{2}(X-\mu)^{T}\Sigma^{-1}(X-\mu)}} dX \]
-که همان خواسته سوال است.
+که همان خواسته سوال است.\\
+
 \parte{}
+
+\[ -\frac{1}{2}(X-\mu-\Sigma t)^{T}\Sigma^{-1}(X-\mu-\Sigma t) 
+= -\frac{1}{2}((X-\mu)^{T}\Sigma^{-1}-t^{T}\Sigma^{T}\Sigma^{-1})(X-\mu-\Sigma t) \]
+\[ 
+= -\frac{1}{2}((X-\mu)^{T}\Sigma^{-1}-t^{T})((X-\mu)-\Sigma t) 
+\]
+\[ 
+= -\frac{1}{2}((X-\mu)^{T}\Sigma^{-1}(X-\mu) -t^{T}(X-\mu) - (X-\mu)^{T}t +t^{T}\Sigma t)
+\]
+\[
+= -\frac{1}{2}(X-\mu)^{T}\Sigma^{-1}(X-\mu) + t^{T}(X-\mu) -\frac{1}{2}t^{T}\Sigma t
+\]
 \parte{}
