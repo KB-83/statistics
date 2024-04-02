@@ -1,0 +1,28 @@
+\parte{}
+اگر توزیع حاشیه ای نسبت به متغیر $X_i$  را داشته باشیم میتوانیم امید ریاضی آن را محاسبه کنیم و اما با توجه به نتیجه ای که قسمت قبل گرفتیم
+توزیع حاشیه ای نسبت به دو متغیر $X_i$ و $X_j$ برابر است با:\\
+\[ 
+    \frac{1}{\sqrt{(2\pi)^2 det(\tilde{\Sigma})}} \text{exp}(-\frac{1}{2}{(\tilde{X} - \tilde{\mu})}^{T}\Tilde{\Sigma}^{-1}(\tilde{X} - \tilde{\mu}))
+\]
+که $\tilde{X} = (X_i,X_j)$ و $\tilde{\mu} = (\mu_i,\mu_j)$ و $\Sigma = 
+\begin{bmatrix}
+    \sigma_{ii} & \sigma_{ij} \\
+    \sigma_{ij} & \sigma_{jj} \\
+\end{bmatrix}
+$.\\
+حال اگر نسبت به $X_j$ از این تابع انتگرال بگیریم دوباره با توجه به قسمت قبل تابع توزیع حاشیه ای برای $X_i$ را خواهیم داشت
+فقط به این نکته توجه کنیم که $\tilde{\Sigma} = det(\tilde{\Sigma}) = \sigma_{ii}$ پس داریم:\\
+\[ 
+    f_{X_i}(x_i) =  \frac{1}{\sqrt{(2\pi)\sigma_{ii}}} \text{exp}(-\frac{(X_i - \mu_i)^2}{2\sigma_{ii}})
+\]
+\\
+ که میدانیم تابع چگالی متغیر تصادفی نرمال با میانگین $\mu_i$ است پس:
+ \[ E[X_i] = \mu_i\]
+\parte{}
+طبق استدلال قسمت قبل و تابع چگالی بدست آمده به وضوح داریم:\\
+\[\sigma_{ii} = \sigma_{i}^2 = var(X_i) \]
+\parte{}
+طبق قسمت $1$ داریم:\\
+\[
+    f_{X_i,X_j}(x_i,x_j)=\frac{1}{\sqrt{(2\pi)^2 det(\tilde{\Sigma})}} \text{exp}(-\frac{1}{2}{(\tilde{X} - \tilde{\mu})}^{T}\Tilde{\Sigma}^{-1}(\tilde{X} - \tilde{\mu}))
+\]

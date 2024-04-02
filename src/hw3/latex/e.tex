@@ -6,7 +6,6 @@
 که همان خواسته سوال است.\\
 
 \parte{}
-
 \[ -\frac{1}{2}(X-\mu-\Sigma t)^{T}\Sigma^{-1}(X-\mu-\Sigma t) 
 = -\frac{1}{2}((X-\mu)^{T}\Sigma^{-1}-t^{T}\Sigma^{T}\Sigma^{-1})(X-\mu-\Sigma t) \]
 \[ 
@@ -17,5 +16,41 @@
 \]
 \[
 = -\frac{1}{2}(X-\mu)^{T}\Sigma^{-1}(X-\mu) + t^{T}(X-\mu) -\frac{1}{2}t^{T}\Sigma t
-\]
+\]\\
+
 \parte{}
+می خواهیم انتگرال زیر را محاسبه کنیم:
+\[ \int_{\mathbb{R}^{n}}{\frac{1}{\sqrt{(2\pi)^n det(\Sigma)}} e^{t^{T}X-\frac{1}{2}(X-\mu)^{T}\Sigma^{-1}(X-\mu)}} dX \]
+
+با توجه به رابطه بالا داریم:\\
+
+\[
+    -\frac{1}{2}(X-\mu)^{T}\Sigma^{-1}(X-\mu) + t^{T}(X-\mu) -\frac{1}{2}t^{T}\Sigma t
+    +(\frac{1}{2}t^{T}\Sigma t + t^{T}\mu)
+\]
+
+\[
+= -\frac{1}{2}Y^{T}{\Sigma}^{-1}Y +(\frac{1}{2}t^{T}\Sigma t + t^{T}\mu)
+= t^{T}X-\frac{1}{2}(X-\mu)^{T}\Sigma^{-1}(X-\mu)
+\]\\
+
+حالا با تغییر متغیر $Y=X-\mu-\Sigma t$ داریم:\\
+
+\[ 
+    D(Y) = I \quad J(D(Y)) = det(I) = 1
+\]\\
+
+\[ 
+    \int_{\mathbb{R}^{n}}{\frac{1}{\sqrt{(2\pi)^n det(\Sigma)}} e^{-\frac{1}{2}Y^{T}{\Sigma}^{-1}Y +(\frac{1}{2}t^{T}\Sigma t + t^{T}\mu)}} dY 
+\]\\
+
+\[
+    = e^{(\frac{1}{2}t^{T}\Sigma t + t^{T}\mu)}\int_{\mathbb{R}^{n}}{\frac{1}{\sqrt{(2\pi)^n det(\Sigma)}} e^{-\frac{1}{2}Y^{T}{\Sigma}^{-1}Y }} dY 
+\]\\
+و از طرفی میدانیم:\\
+\[ \int_{\mathbb{R}^{n}}{\frac{1}{\sqrt{(2\pi)^n det(\Sigma)}} e^{-\frac{1}{2}Y^{T}{\Sigma}^{-1}Y }} dY  = 1\]
+پس:\\
+\[ M_X(t) = \text{exp}[\frac{1}{2}t^{T}\Sigma t + t^{T}\mu]\]
+
+
+نماد گذاری ژاکوبین و دی رو درست کن و از عارف بپرس چرا دی ایکس با دی وای برابر میشه چرا سیگما تانیر گذار نیست؟

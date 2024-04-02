@@ -1,0 +1,53 @@
+\parte{}
+از قسمت های قبل توزیع توام دو متغیر تصادفی نرمال را میدانیم.
+پس شروع به محاسبه کرده و داریم:\\
+\[
+f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)} = 
+\frac{\sqrt{(2\pi)}\sigma_{x}}{\sqrt{(2\pi)^2 det(\Sigma)}} 
+\text{exp}[-\frac{1}{2}{(A - \mu)}{\Sigma}^{-1}(A - \mu)^{T}]
+\text{exp}[\frac{(x - \mu_x)^2}{2(\sigma_{x})^2}]
+\]\\
+که $A = (X,Y)$ و $\mu = (\mu_x,\mu_y)$ و $\Sigma =\begin{bmatrix}
+    \sigma_{x}^2 & \sigma_{xy} \\
+    \sigma_{xy} & \sigma_{y}^2 \\
+\end{bmatrix}$ .\\\\
+حالا داریم :\\
+\[ 
+    \frac{\sqrt{(2\pi)}\sigma_{x}}{\sqrt{(2\pi)^2 det(\Sigma)}} =
+    \frac{\sigma_{x}}{\sqrt{(2\pi) \sigma_{x}^2\sigma_{y}^2-\sigma_{xy}^2}} =
+    \frac{1}{\sqrt{(2\pi)} \sqrt{\frac{\sigma_{x}^2\sigma_{y}^2-\sigma_{xy}^2}{{\sigma_x}^2}}} =
+    \frac{1}{\sqrt{(2\pi)} \sigma_y \sqrt{\frac{\sigma_{x}^2\sigma_{y}^2-\sigma_{xy}^2}{{\sigma_x}^2{\sigma_y}^2}}}
+\]
+\[ 
+    = \frac{1}{\sqrt{(2\pi)} \sigma_y \sqrt{1-\rho^2}}
+\]\\
+حالا کافیست نشان دهیم عبارات داخل توان نیز باهم برابرند.داریم:\\
+\[
+    -\frac{1}{2}{(A - \mu)}{\Sigma}^{-1}(A - \mu)^{T}+\frac{(x - \mu_x)^2}{2(\sigma_{x})^2}
+\]
+\[
+    = -\frac{1}{2(\sigma_x^2\sigma_y^2 - \sigma_{xy}^2)}{(x-\mu_x,y-\mu_y)}
+    \begin{bmatrix}
+        \sigma_{y}^2 & -\sigma_{xy} \\
+        -\sigma_{xy} & \sigma_{x}^2 \\
+    \end{bmatrix}
+    (x-\mu_x,y-\mu_y)^{T}+\frac{(x - \mu_x)^2}{2(\sigma_{x})^2}
+\]
+
+\[
+    = -\frac{1}{2(\sigma_x^2\sigma_y^2 - \sigma_{xy}^2)}
+    [(x-\mu_x)\sigma_y^2-(y-\mu_y)\sigma_{xy},-(x-\mu_x)\sigma_{xy}+(y-\mu_y)\sigma_{x}^2]
+    (x-\mu_x,y-\mu_y)^{T}+\frac{(x - \mu_x)^2}{2(\sigma_{x})^2}
+\]
+
+\[
+    = -\frac{(x-\mu_x)^2\sigma_y^2-2(x-\mu_x)(y-\mu_y)\sigma_{xy}+(y-\mu_y)^2\sigma_{x}^2}{2(\sigma_x^2\sigma_y^2 - \sigma_{xy}^2)}
+    +\frac{(x - \mu_x)^2}{2(\sigma_{x})^2}
+\]
+\[
+=-\frac{1}{2\sigma_y^2(1-\rho^2)}(y-\mu_u-\rho\frac{\sigma_y}{\sigma_x}(x-\mu_x))^2    
+\]
+\\
+درنتیجه دو عبارت با هم برابرند.\\
+\parte{}
+\parte{}
