@@ -1,0 +1,34 @@
+تابع مولد گشتاور را برای متغیر تصادفی Y
+محاسبه میکنیم. داریم:\\
+\[
+    M_Y(t) = E[e^{t^{T} Y}]
+    = E[e^{t^{T} (c+BX)}]
+    = e^{t^{T}c}E[e^{t^{T}BX}]
+\]\\
+حالا تغییر متغیر $t^\prime = t^{T}B$
+را درنظر میگیریم و چون $X$ متغیر تصادفی نرمال با
+پارامتر های $\mu$ و $\Sigma$ است
+داریم:\\
+\[
+    E[e^{t^\prime X}]
+    = e^{\frac{1}{2}{t^\prime}\Sigma{t^\prime}^{T}+{t^\prime}\mu}
+    = e^{\frac{1}{2}{t^{T}B}\Sigma{t{B}^{T}}+{t^{T}B}\mu}
+\]\\
+پس داریم :\\
+\[
+    M_Y(t) = e^{t^{T}c}e^{\frac{1}{2}{t^{T}B}\Sigma{{B}^{T}t}+{t^{T}B}\mu}
+    = e^{\frac{1}{2}{t^{T}B}\Sigma{{B}^{T}t}+t^{T}(c+B\mu)}
+\]\\
+فرض کنیم $A = B\Sigma B^{T}$ آنگاه داریم:\\
+\[
+    t^{T}At = t^ B\Sigma B^{T}t 
+\]\\
+پس داریم:\\
+\[
+    M_Y(t) = e^{\frac{1}{2}{t^{T}At}+t^{T}(c+B\mu)}
+\]\\
+که از روی تعریف تابع مولد گشتاور برای توزیع نرمال داریم:\\
+\[
+    Y \sim \mathcal{N}(c+B\mu, A) 
+    => Y \sim \mathcal{N}(c+B\mu, B\varSigma B^T)
+\]

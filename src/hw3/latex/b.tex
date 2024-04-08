@@ -115,6 +115,64 @@ A \int_{-\infty}^{\infty}e^{-\frac{1}{2} (\alpha (Y_1^2 + \frac{\beta}{\alpha})^
 \]
 که همان خواسته سوال است.\\
 
-\parte{}
 
-هر وقت دترمینان یاد گرفتم بهت میگم$:)$\\
+
+
+
+
+
+
+
+
+
+
+\parte{}
+داریم :\\
+\[
+    \Sigma \Sigma^{-1} = I
+\]\\
+\[
+    \begin{bmatrix}
+        a_{11} & v^{T} \\
+        v & \tilde{A} \\
+    \end{bmatrix}
+    \begin{bmatrix}
+        \sigma_{11} & w^{T} \\
+        w & \tilde{\Sigma} \\
+    \end{bmatrix}
+    =I
+\]\\
+پس داریم:\\
+\[
+    a_{11}\sigma_{11}+v^T w = 1
+    => w = (1 - a_{11}\sigma_{11})
+\]
+
+\[
+    a_{11}w^T+v^T \tilde{\Sigma} = 0 = (0,0,0,...,0)_{1\times(n-1)}
+\]
+
+\[
+    v\sigma_{11}+\tilde{A}w = 0 = (0,0,0,...,0)^{T}_{1\times(n-1)}
+\]
+
+\[
+    vw^T+\tilde{A}\tilde{\Sigma} = I_{(n-1)\times(n-1)}
+\]
+می خواهیم نشان دهیم$B\tilde{\Sigma} = I$.داریم:\\
+\[
+    (\tilde{A}-\frac{vv^T}{a_{11}})\tilde{\Sigma}  
+    =\tilde{A}\tilde{\Sigma} -\frac{vv^T\tilde{\Sigma}}{a_{11}}
+\]\\
+حالا با توجه به رابطه دوم میدانیم $v^T\tilde{\Sigma} = -a_{11}w^T$
+آن را در عبارت بالا جایگزین میکنیم داریم:\\
+\[
+    =>(\tilde{A}-\frac{vv^T}{a_{11}})\tilde{\Sigma}  
+    =\tilde{A}\tilde{\Sigma} -\frac{-a_{11}vw^T}{a_{11}}
+    =\tilde{A}\tilde{\Sigma} +vw^T
+\]
+که همان عبارت چهارم و برابر با $I$ است پس داریم:\\
+\[
+    \tilde{A}\tilde{\Sigma} +vw^T = B\tilde{\Sigma} = I
+\]
+که ادعا ثابت میشود.\\\\

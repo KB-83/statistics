@@ -49,5 +49,97 @@ f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)} =
 \]
 \\
 درنتیجه دو عبارت با هم برابرند.\\
+
+
+
+
+
+
 \parte{}
+
+
+
+برای محاسبه $E[Y|X=x]$ باید $\int_{-\infty}^{\infty}{y f_{Y|X}(y|x)}dy$ را محاسبه کنیم. داریم:\\
+\[ A = \frac{1}{\sqrt{2\pi}\sigma_y\sqrt{1-\rho^2}}\]
+\[ B = \frac{1}{2\sigma_y^2(1-\rho^2)} \]
+\[ C = \mu_y+\rho\frac{\sigma_y}{\sigma_x}(x-\mu_x) \]
+حالا باید عبارت زیر را محاسبه کنیم:\\
+\[
+    A\int_{-\infty}^{\infty}{ye^{-B(y-C)^2}}dy
+    =A\int_{-\infty}^{\infty}{(u+C)e^{-B(u)^2}}du
+    =A\int_{-\infty}^{\infty}{ue^{-B(u)^2}}du+A\int_{-\infty}^{\infty}{Ce^{-B(u)^2}}du
+\]\\
+\[
+    =\frac{Ae^{-B(u)^2}}{-2B}|_{-\infty}^{+\infty}+AC\int_{-\infty}^{\infty}{\frac{e^{-v^2}}{\sqrt{B}}}dv
+    = 0 +\frac{AC}{\sqrt{B}}\sqrt{\pi}
+\]\\
+\[
+    =\frac{C(\sqrt{(2\sigma_y^2(1-\rho^2))})}{\sqrt{2\pi}\sigma_y\sqrt{1-\rho^2}}\sqrt{\pi}
+    =C = \mu_y+\rho\frac{\sigma_y}{\sigma_x}(x-\mu_x)
+\]\\
+
+
+
+
+
+
+
+
+برای محاسبه $var(Y|X = x)$ باید 
+$\int_{-\infty}^{\infty}{(y-\mu_y)^2f_{Y|X}(y|x)}$ را محاسبه کنیم.
+داریم:\\\\
+\[
+    \int_{-\infty}^{\infty}{(y-\mu_y)^2f_{Y|X}(y|x)}
+    =\int_{\infty}^{\infty}{(y^2 - 2y\mu_y +\mu_y^2 )f_{Y|X}(y|x)}
+\]
+\[
+    =\int_{-\infty}^{\infty}{y^2f_{Y|X}(y|x)} + 2\mu_y\int_{-\infty}^{\infty}{yf_{Y|X}(y|x)} + \mu_y^2\int_{-\infty}^{\infty}{f_{Y|X}(y|x)}
+\]\\
+
+از طرفی میدانیم $\int_{-\infty}^{\infty}{f_{Y|X}(y|x)} = 1$ و با توجه به محاسبات قسمت قبل
+داریم :\\\\
+$\int_{-\infty}^{\infty}{yf_{Y|X}(y|x)} = \mu_y+\rho\frac{\sigma_y}{\sigma_x}(x-\mu_x) = C$ .\\\\
+پس کافیست عبارت $\int_{-\infty}^{\infty}{y^2f_{Y|X}(y|x)}$ را محاسبه کنیم. داریم:\\
+\[
+    \int_{-\infty}^{\infty}{y^2f_{Y|X}(y|x)}
+    = A\int_{-\infty}^{\infty}{y^2e^{-B(y-C)^2}}dy
+    = A\int_{-\infty}^{\infty}{(u+C)^2e^{-B(u)^2}}du
+\]
+\[
+    = A\int_{-\infty}^{\infty}{u^2e^{-B(u)^2}}du+ 2CA\int_{-\infty}^{\infty}{ue^{-B(u)^2}}du + C^2A\int_{-\infty}^{\infty}{e^{-B(u)^2}}du
+\]
+\[
+    = A\int_{-\infty}^{\infty}{u^2e^{-B(u)^2}}du+ 0 +\frac{\sqrt{\pi}C^2A}{\sqrt{B}}
+\]\\
+ حالا به محاسبه عبارت $A\int_{-\infty}^{\infty}{u^2e^{-B(u)^2}}du$ می پردازیم. داریم:\\\\
+
+ \[
+    A\int_{-\infty}^{\infty}{u\times ue^{-B(u)^2}}du = 
+    A(u\frac{e^{-B(u)^2}}{-2B}|_{-\infty}^{+\infty} - \frac{1}{-2B}\int_{-\infty}^{\infty}{e^{-Bu^2}})
+    = 0 + \frac{A}{2B}\frac{\sqrt{\pi}}{\sqrt{B}}
+    = \frac{A\sqrt{\pi}}{2\sqrt{B^3}}
+ \]\\
+ پس داریم:\\
+ \[
+    \int_{-\infty}^{\infty}{y^2f_{Y|X}(y|x)}
+    = \frac{A\sqrt{\pi}}{2\sqrt{B^3}} + \frac{\sqrt{\pi}C^2A}{\sqrt{B}}
+ \]
+\\
+و در نتیجه داریم:\\
+\[
+    var(Y|X = x) =\frac{A\sqrt{\pi}}{2\sqrt{B^3}} 
+    + \frac{\sqrt{\pi}C^2A}{\sqrt{B}}
+    +\mu_y^2+2\mu_y C
+\]
+می دانیم $A = \sqrt{B}$ پس داریم:\\
+\[
+    var(Y|X = x) =\frac{\sqrt{\pi}}{2B} 
+    + \sqrt{\pi}C^2
+    +\mu_y^2+2\mu_y C
+    = \frac{1}{2B} = \sigma_y^2(1-\rho^2)
+\]\\
+که اثبات کامل میشود. همچنین از روی تابع توزیع و تطبیق آن با توزیع نرمال نیز
+میتوان مستقیم این نتیجه را گرفت.
+
 \parte{}
+\\\\

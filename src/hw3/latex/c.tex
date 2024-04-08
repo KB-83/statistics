@@ -21,8 +21,111 @@ $.\\
 \parte{}
 طبق استدلال قسمت قبل و تابع چگالی بدست آمده به وضوح داریم:\\
 \[\sigma_{ii} = \sigma_{i}^2 = var(X_i) \]
+
+
+
 \parte{}
 طبق قسمت $1$ داریم:\\
 \[
-    f_{X_i,X_j}(x_i,x_j)=\frac{1}{\sqrt{(2\pi)^2 det(\tilde{\Sigma})}} \text{exp}(-\frac{1}{2}{(\tilde{X} - \tilde{\mu})}^{T}\Tilde{\Sigma}^{-1}(\tilde{X} - \tilde{\mu}))
+    f_{X_i,X_j}(x_i,x_j)=\frac{1}{\sqrt{(2\pi)^2 det({\Sigma})}} \text{exp}(-\frac{1}{2}{({X} - {\mu})}^{T}{\Sigma}^{-1}({X} -{\mu}))
 \]
+و از طرفی کافیست $E[X_i X_j]$ 
+را محاسبه کنیم چون در گام های قبل $E[X_i]$
+و $E[Xـj]$
+را محاسبه کردیم.
+\[
+    E[X_i X_j] = \int{x_i x_j f_{X_i,X_j}(x_i,x_j)} dx_i dx_j 
+\]
+که برای سادگی در نظر میگیریم:\\
+\[
+    A = \frac{1}{2\pi\sqrt{det({\Sigma})}}
+\]
+\[
+    \Sigma = \begin{bmatrix}
+        \sigma_{i}^2 & \sigma_{ij} \\
+        \sigma_{ij} & \sigma_{j}^2 \\
+    \end{bmatrix}  
+    \quad
+    \Sigma^{-1} = \begin{bmatrix}
+        a & b \\
+        c & d \\
+    \end{bmatrix}  
+\]
+\\
+
+\[
+    E[X_i X_j] = A\int_{-\infty}^{\infty}{\int_{-\infty}^{\infty}
+    {x_i x_jexp[a(x_i-\mu_i)^2+c(x_j-\mu)^2+(b+d)(x_i-\mu_i)(x_j-\mu_j)]}}
+    dx_i dx_j 
+\]
+
+\[
+    = A\int_{-\infty}^{\infty}{x_j exp[c(x_j-\mu)^2]\int_{-\infty}^{\infty}
+    {x_i exp[a(x_i-\mu_i)^2+(b+d)(x_i-\mu_i)(x_j-\mu_j)]}}
+    dx_i dx_j 
+\]\\
+ابتدا انتگرال زیر را محاسبه میکنیم:\\
+
+\[
+    \int_{-\infty}^{\infty}
+    {x_i exp[a(x_i-\mu_i)^2+(b+d)(x_i-\mu_i)(x_j-\mu_j)]}
+    dx_i
+\]\\
+در نظر میگیریم $u=(x_i-\mu_i)$ و $s = (b+d)(x_j-\mu_j)$
+داریم:\\
+\[
+    = \int_{-\infty}^{\infty}
+    {(u+\mu_i) exp[au^2+su]}
+    du
+    = \int_{-\infty}^{\infty}
+    {(u+\mu_i) exp[a(u+s/2a)^2-s^2/4a]}
+    du
+\]\\
+در نظر میگیریم $v=(u+s/2a)$
+داریم:\\
+
+\[
+    = \int_{-\infty}^{\infty}
+    {(v-\frac{s}{2a}+\mu_i) exp[av^2-s^2/4a]}
+    dv
+\]
+\[
+    = \int_{-\infty}^{\infty}
+    {(v)exp[av^2-s^2/4a]}
+    dv
+    +
+    \int_{-\infty}^{\infty}
+    {(\mu_i-\frac{s}{2a}) exp[av^2-s^2/4a]}
+    dv
+\]\\
+که از آنجایی که تابع $f(v) = (v)exp[av^2-s^2/4a]$
+تابعی فرد است پس انتگرال آن روی بازه متقارن صفر و داریم:\\
+\[
+    = (\mu_i-\frac{s}{2a})e^{-\frac{s^2}{4a}}
+    \int_{-\infty}^{\infty}
+    { e^{av^2}}
+    dv  
+\]
+اگر $a>0$ انتگرال بالا واگراست پس با شرط $a<0$ کار را ادامه میدهم داریم:\\
+\[
+    = (\mu_i-\frac{s}{2a})e^{-\frac{s^2}{4a}}
+    \frac{\sqrt{\pi}}{\sqrt{-a}}
+\]
+پس برای ادامه کار داریم:\\
+\[
+    E[X_i X_j] = \int_{-\infty}^{\infty}{x_j exp[c(x_j-\mu)^2] (\mu_i-\frac{s}{2a})e^{-\frac{s^2}{4a}}
+    \frac{\sqrt{\pi}}{\sqrt{-a}}}
+    dx_j
+\]\\
+\[
+    = \int_{-\infty}^{\infty} (\mu_i-\frac{(b+d)(x_j-\mu_j)}{2a}) {x_j exp[c(x_j-\mu)^2-\frac{((b+d)(x_j-\mu_j))^2}{4a}]
+    \frac{\sqrt{\pi}}{\sqrt{-a}}}
+    dx_j
+\]\\
+\[
+    = \int_{-\infty}^{\infty} (\mu_i-\frac{s}{2a}) {x_j exp[c\frac{s^2}{(b+d)^2}-\frac{s^2}{4a}]
+    \frac{\sqrt{\pi}}{\sqrt{-a}}}
+    \frac{ds}{(b+d)}
+\]
+\\\\
+% (ناقص)
