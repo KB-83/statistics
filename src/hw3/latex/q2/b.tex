@@ -1,0 +1,61 @@
+\parte{}
+از آنجایی که $X_i$ 
+ها هم توزیع هستند $P[a<X_i<b] = P[a<X_j<b]$
+در نتیجه اگر بخواهیم $X_{(1)}$ بین $a$ و $b$
+باشد هر یک از $X_i$ ها میتوانند کاندید باشند پس
+در کل برای اینکه ترتیب $X_i$ ها را بچینیم $n!$
+حالت داریم که این یعنی :\\
+\[
+  Pr[x_1-\frac{\epsilon}{2}<X_{(1)}<x_1+\frac{\epsilon}{2},
+  ...,
+  x_n-\frac{\epsilon}{2}<X_{(n)}<x_n+\frac{\epsilon}{2}]  
+\]
+\[
+  = n!Pr[x_{i_1}-\frac{\epsilon}{2}<X_{1}<x_{i_1}+\frac{\epsilon}{2},
+  ...,
+  x_{i_n}-\frac{\epsilon}{2}<X_{n}<x_{i_n}+\frac{\epsilon}{2}]  
+\]
+حالا با توجه به مستقل بودن $X_i$ ها داریم:\\
+
+\[
+  = n!Pr[x_{i_1}-\frac{\epsilon}{2}<X_{1}<x_{i_1}+\frac{\epsilon}{2},
+  ...,
+  x_{i_n}-\frac{\epsilon}{2}<X_{n}<x_{i_n}+\frac{\epsilon}{2}] 
+  = n! \prod_{j=1}^{n}{Pr[x_{i_j} - \frac{\epsilon}{2} <X_j< x_{i_j} + \frac{\epsilon}{2}]}
+\]
+که عبارت $Pr[x_{i_j} - \frac{\epsilon}{2} <X_j< x_{i_j} + \frac{\epsilon}{2}]$
+وقتی $\epsilon$
+به سمت صفر میرود به سمت $\epsilon f(x_j)$ می رود
+پس داریم:\\
+\[
+    \approx n!\epsilon^n f(x_1)f(x_2)...f(x_n)
+\]
+\parte{}
+با توجه به تعریف داریم :\\
+\[
+    Pr[x_1-\frac{\epsilon}{2}<X_{(1)}<x_1+\frac{\epsilon}{2},
+  ...,
+  x_n-\frac{\epsilon}{2}<X_{(n)}<x_n+\frac{\epsilon}{2}]
+\]
+\[
+    = \int_{x_n-\frac{\epsilon}{2}}^{x_n+\frac{\epsilon}{2}} 
+    \dots
+    \int_{x_1-\frac{\epsilon}{2}}^{x_1+\frac{\epsilon}{2}} 
+    {f_{X_{(1)},...,X_{(n)}}(x_1,x_2,..,x_n)}
+    dx_1 \dots dx_n
+\]
+که داریم:\\
+\[
+    \lim_{\epsilon \to 0}{
+    \int_{x_n-\frac{\epsilon}{2}}^{x_n+\frac{\epsilon}{2}} 
+    \dots
+    \int_{x_1-\frac{\epsilon}{2}}^{x_1+\frac{\epsilon}{2}} 
+    {f_{X_{(1)},...,X_{(n)}}(x_1,x_2,..,x_n)}
+    dx_1 \dots dx_n
+    }
+    = \epsilon^n{f_{X_{(1)},...,X_{(n)}}(x_1,x_2,..,x_n)}
+\]
+پس به صورت تقریبی داریم:\\
+\[
+    {f_{X_{(1)},...,X_{(n)}}(x_1,x_2,..,x_n)} = n!f(x_1)f(x_2)...f(x_n)
+\]
