@@ -1,0 +1,44 @@
+\parte{}
+داریم:\\
+\[
+    g(x) = f(x+\alpha) = f(-x+\alpha) = g(-x)
+\]
+پس تابع $g(x)$ 
+تابعی زوج است.\\\\
+\parte{}
+داریم:\\
+\[
+    E(X) = \int_{-\infty}^{\infty}{xf(x)dx}
+    =  \int_{-\infty}^{\infty}{(u+\alpha)f(u+\alpha)du}
+    =  \int_{-\infty}^{\infty}{(u+\alpha)g(u)du}
+\]
+\[
+    = \int_{-\infty}^{\infty}{ug(u)du}
+    + \int_{-\infty}^{\infty}{\alpha g(u)du}
+\]\\
+که از آنجایی که $g(u)$ تابعی 
+زوج است پس $ug(u)$ تابعی فرد و $\int_{-\infty}^{\infty}{ug(u)du} = 0$.
+درنتیجه داریم:\\
+\[
+    E(X) = \alpha \int_{-\infty}^{\infty}{g(u)du}
+\]\\
+و همچنین از آنجایی که تابع $g(x)$ 
+انتقالی از یک تابع توزیع است پس $\int_{-\infty}^{\infty}{g(u)du} = 1 $
+در نتیجه:\\
+\[
+    E(X) = \alpha
+\]\\
+\parte{}
+با تغییر متغیر $u = x-\alpha$ داریم:\\
+\[
+    \int_{-\infty}^{m}{f(x)dx} 
+    = \int_{-\infty}^{m-\alpha}{f(u+\alpha) du}
+    = \int_{-\infty}^{m-\alpha}{g(u)du}
+    = \frac{1}{2}
+\]
+که از آنجایی که $g(x)$ تنها در نقطه $0$
+مساحت چپ و راست برابری دارد و مساحت کل زیر آن برابر با $1$
+است پس داریم:\\
+\[ 
+    m-\alpha = 0 \quad => \quad m = \alpha    
+\]
