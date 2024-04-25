@@ -1,0 +1,61 @@
+\parte{}
+\[
+    E(X_{(n)}) = \int_{-\infty}^{\infty}
+    {\alpha_n x f(x)F(x)^{n-1}(1-F(x))^{N-n}}dx
+\]
+که $\alpha_n = \frac{n!}{(N-n)!(n-1)!}$
+.\\\\
+\parte{}
+\[
+    E(X_{(n)}) = \int_{-\infty}^{\infty}
+    {\alpha_n x f(x)F(x)^{n-1}(1-F(x))^{N-n}}dx
+\]
+\[
+    = \int_{-\infty}^{\infty}
+    {\alpha_n (u+\alpha) f((u+\alpha))F((u+\alpha))^{n-1}(1-F((u+\alpha)))^{N-n}}du
+\]
+\[
+    = \int_{-\infty}^{\infty}
+    {\alpha_n (u+\alpha) g(u)G(u)^{n-1}(1-G(u))^{N-n}}du
+\]
+
+\parte{}
+
+\[
+    E(X_{(n)}) = \int_{-\infty}^{\infty}
+    {\alpha_n (u+\alpha) g(u)G(u)^{n-1}(1-G(u))^{N-n}}du
+\]
+\[
+    = \alpha_n  \int_{-\infty}^{\infty}
+    {u g(u)G(u)^{n-1}(1-G(u))^{N-n}}du
+    +
+    \int_{-\infty}^{\infty}
+    {\alpha_n \alpha g(u)G(u)^{n-1}(1-G(u))^{N-n}}du
+\]\\
+
+که تابع $g(u)G(u)^{n-1}(1-G(u))^{N-n}$
+زوج است.(زیرا تمام توابع آن زوج اند).\\\\
+پس تابع $ug(u)G(u)^{n-1}(1-G(u))^{N-n}$
+یک تابع فرد است .\\\\
+در نتیجه 
+$\int_{-\infty}^{\infty}
+{u g(u)G(u)^{n-1}(1-G(u))^{N-n}}du = 0$
+پس داریم:\\
+
+\[
+    E(X_{(n)}) = \int_{-\infty}^{\infty}
+    {\alpha_n \alpha g(u)G(u)^{n-1}(1-G(u))^{N-n}}du
+\]
+\[
+    = \alpha \int_{-\infty}^{\infty}
+    {\alpha_ng(u)G(u)^{n-1}(1-G(u))^{N-n}}du
+\]\\
+که عبارت $\int_{-\infty}^{\infty}
+{\alpha_ng(u)G(u)^{n-1}(1-G(u))^{N-n}}du$
+همان تابع چگالی توزیع میانه است و درنتیجه این انتگرال برابر 
+$1$ است پس :\\
+\[
+    E(X_{(n)}) = \alpha \int_{-\infty}^{\infty}
+    {\alpha_ng(u)G(u)^{n-1}(1-G(u))^{N-n}}du = 
+    \alpha
+\]\\

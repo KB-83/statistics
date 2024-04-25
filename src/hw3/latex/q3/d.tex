@@ -1,0 +1,59 @@
+\parte{}
+تغییر متغیر $u = G(x)$ را انجام میدهیم داریم:\\
+\[
+    u = G(x)
+    \quad
+    =>
+    \quad
+    \frac{du}{dx} = g(x)
+    \quad
+    =>
+    \quad
+    dx = \frac{du}{g(x)}
+\]
+حالا عبارات بدست آمده را در انتگرال جایگذاری میکنیم داریم:\\
+\[
+    var(X_{(n)}) = \int_{-\infty}^{\infty}{
+    \alpha_n {H(u)}^2(u(1-u))^{n-1} du
+  }
+\]
+
+\parte{}
+\[
+    H(u) = H(\frac{1}{2})+{H^{\prime}(\frac{1}{2})}(u-\frac{1}{2}) 
+\]
+\parte{}
+ قرار می دهیم $H(\frac{1}{2}) = a$و $H(\frac{1}{2}) = b$.
+
+\[
+    var(X_{(n)}) = \alpha_n  \int_{-\infty}^{\infty}{
+    {(a+b(u-\frac{1}{2}))}^2(u(1-u))^{n-1} du
+  }
+\]
+\[
+    = \alpha_n  \int_{-\infty}^{\infty}{
+    {(a+b(\frac{z}{2}))}^2(\frac{z+1}{2}(1-\frac{z+1}{2}))^{n-1} \frac{dz}{2}
+  }
+\]
+
+\[
+    = \alpha_n  \int_{-\infty}^{\infty}{
+    (a^2+\frac{b^2z^2}{4}+abz)
+    (\frac{z+1}{2} - \frac{z^2+2z+1}{4})^{n-1}
+     \frac{dz}{2}
+  }
+\]
+\[
+    = \alpha_n  \int_{-\infty}^{\infty}{
+    (a^2+\frac{b^2y}{4}+aby^\frac{1}{2})
+    (\frac{y^\frac{1}{2}+1}{2} - \frac{y+2y^\frac{1}{2}+1}{4})^{n-1}
+     \frac{dy}{4z}
+  }
+\]
+
+% \[
+%     = \alpha_n  \int_{-\infty}^{\infty}{
+%     (a^2 + b^2(u^2 + \frac{1}{4} - u)+2ab(u-\frac{1}{2}))
+%     (u(1-u))^{n-1} du
+%   }
+% \]
