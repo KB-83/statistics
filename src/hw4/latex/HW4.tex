@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{/Users/kajal/Documents/statistics/resources/templates/HomeWorkTemplate}
+\usepackage{circuitikz}
+\usepackage[shortlabels]{enumitem}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{fontspec}
+\usepackage{xepersian}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{changepage}
+
+\usetikzlibrary{arrows,automata}
+\usetikzlibrary{circuits.logic.US}
+\settextfont{XB Niloofar}
+
+\newcounter{problemcounter}
+\newcounter{subproblemcounter}[problemcounter]
+\newcounter{partcounter}[subproblemcounter]
+
+\renewcommand{\thesubproblemcounter}{\alph{subproblemcounter})}
+\renewcommand{\thepartcounter}{\roman{partcounter})}
+
+\newcommand{\problem}[1]{
+    \setcounter{subproblemcounter}{0}
+    \stepcounter{problemcounter}
+    \subsection*{پرسش \arabic{problemcounter} #1}
+}
+
+\newcommand{\subproblem}[1]{
+    \setcounter{partcounter}{0}
+    \stepcounter{subproblemcounter}
+    \textbf{\harfi{subproblemcounter})}
+}
+
+\newcommand{\parte}[1]{
+    \stepcounter{partcounter}
+	\arabic{partcounter})
+}
+
+
+
+\begin{document}
+
+\handout
+{آمار و کاربرد ها}
+{تمرین سری چهار}
+{کژال باغستانی}
+{۴۰۱۱۰۰۰۷۱}
+
+\input{q1.tex}
+\input{q2.tex}
+\input{q3.tex}
+\input{q4.tex}
+\input{q5.tex}
+\input{q6.tex}
+
+
+\end{document}
+

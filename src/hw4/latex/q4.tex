@@ -1,0 +1,28 @@
+\problem{}
+\subproblem{}
+\[
+    f(x|\hat{\theta}) =
+    \begin{cases}
+        \frac{1}{\hat{\theta}} &  0\leq x\leq \hat{\theta}\\
+        0 & \text{otherwise}
+    \end{cases}
+\]
+می خواهیم $A = P[Xـ1 =x_1,X_2 = x_2,...,X_n= x_n|\hat{\theta}]$ را ماکسیمم کنیم که به خاطر استقلال داریم:\\
+\[
+    A =
+    \begin{cases}
+        0 &  max(X_i) > \hat{\theta}\\
+        \frac{1}{{\hat{\theta}}^n} & \text{otherwise}
+    \end{cases}
+\]
+پس داریم $max(X_i) \geq \hat{\theta}$ که چون تابع $\frac{1}{{\hat{\theta}}^n}$
+بر حسب $\hat{\theta}$ نزولی است پس ماکسیمم خود را وقتی اخذ میکند که $\hat{\theta}$
+کمترین مقدار خود یعنی $max(X_i)$ باشد.
+\\\\
+\subproblem{}
+اگر بازه را باز در نظر بگیریم آنگاه نمیتوان $\hat{\theta} = max(X_i)$
+را در نظر گرفت زیرا پارامتر ما از هر یک از $X_i$ ها بزرگتر اکید است.
+حالا میتوانیم $\hat{\theta}$
+را در بازه $(max(X_i),\infty)$ در نظر بگیریم 
+که چون این بازه مینیمم ندارد روش بیشینه درست نمایی مقداری را به ما به عنوان
+بر آوردگر اعلام نمیکند.

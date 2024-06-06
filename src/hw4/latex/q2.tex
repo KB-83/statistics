@@ -1,0 +1,70 @@
+\problem{}
+\subproblem{}
+\[
+    MSE(T_{\omega}) =  B^2(T_{\omega})+var(T_{\omega})
+\]
+که داریم $B(T_{\omega}) = E[T_{\omega}] - \mu$ پس:\\
+\[
+    E[T_{\omega}] = \omega E[ \bar{X_1}]+(1-\omega)E[ \bar{X_2}]
+    = \omega \mu+(1-\omega) \mu = \mu
+\]
+در نتیجه $B(T_{\omega}) = 0 $ می باشد و در ادامه داریم:\\
+\[
+    var(T_{\omega}) = var(\omega\bar{X_1}+(1-\omega)\bar{X_2})
+    = \omega^2var(\bar{X_1})+(1-\omega)^2var(\bar{X_2})
+\]
+\[
+    = \omega^2\frac{{\sigma_1}^2}{n}
+    +(1-\omega)^2\frac{{\sigma_2}^2}{n}
+\]
+در نتیجه داریم:\\
+\[
+    MSE(T_{\omega}) = \omega^2\frac{{\sigma_1}^2}{n}
+    +(1-\omega)^2\frac{{\sigma_2}^2}{n}
+\]
+\subproblem{}
+برای نشان دادن اینکه $T_\omega$
+سازگار است 
+کافیست نشان دهیم:\\
+\[
+    T_{\omega} \to \mu \quad \text{as} \quad {n \to \infty}    
+\]
+طبق قانون اعداد بزرگ میدانیم که :\\
+\[
+    \lim _{n \to \infty} {\bar{X_1}} = \lim _{n \to \infty} {\bar{X_2}} =  \mu
+\]\\
+\[
+    \lim _{n \to \infty} {T_\omega} = \omega \mu + (1-\omega) \mu = \mu
+\]\\
+پس $T_{\omega}$ برآوردگری سازگار است.
+\\\\
+\subproblem{}
+می خواهیم 
+\[
+    MSE(T_{\omega}) = f(\omega)= \omega^2\frac{{\sigma_1}^2}{n}
+    +(1-\omega)^2\frac{{\sigma_2}^2}{n}
+\]
+را مینیمم کنیم. چون تابعی پیوسته
+بر حسب امگا است میتوان از آن مشتق گرفت و 
+مشتق آن را برابر صفر قرار داد.\\
+\[
+    f^{\prime}(\omega) =  
+    \frac{2{\sigma_1}^2}{n}\omega - (1 - \omega)\frac{2{\sigma_2}^2}{n}
+    = 0
+\]
+پس داریم:\\
+\[
+    {\sigma_1}^2\omega  = (1 - \omega){\sigma_2}^2
+\]
+\[
+    {\sigma_1}^2\omega  = {\sigma_2}^2 - \omega{\sigma_2}^2
+\]
+\[
+    {\sigma_1}^2\omega  + \omega{\sigma_2}^2= {\sigma_2}^2 
+\]
+\[
+    \omega({\sigma_1}^2 + {\sigma_2}^2)= {\sigma_2}^2 
+\]
+\[
+    \omega= \frac{{\sigma_2}^2}{{\sigma_1}^2 + {\sigma_2}^2}
+\]
