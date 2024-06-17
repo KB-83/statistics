@@ -1,0 +1,22 @@
+\problem{}
+داریم :\\
+\[
+    \frac{\bar{X} -\bar{Y} +\mu_y -\mu_x }{\sqrt{\frac{\sigma_1^2}{n}+\frac{\sigma_1^2}{\frac{m}{k}}}}\sim \mathcal{N}(0,1)
+\]
+از طرفی دیگر میدانیم
+\[ \sum_{i=1}^{n}{(\frac{x_i-\bar{x}}{\sigma_1})^2} \sim \chi^2 (n-1)\]
+\[ \frac{1}{k}\sum_{i=1}^{m}{(\frac{y_i-\bar{y}}{\sigma_1})^2} \sim \chi^2 (m-1)\]
+درنتیجه داریم:\\
+\[
+    \frac{\frac{\bar{X} -\bar{Y} +\mu_y -\mu_x }{\sqrt{\frac{\sigma_1^2}{n}+\frac{\sigma_1^2}{\frac{m}{k}}}}}
+    {\sqrt{\frac{\frac{1}{k}\sum_{i=1}^{m}{(\frac{y_i-\bar{y}}{\sigma_1})^2}+\sum_{i=1}^{n}{(\frac{x_i-\bar{x}}{\sigma_1})^2}}{n+m-2}}} 
+    =  
+    \frac{\frac{\bar{X} -\bar{Y} +\mu_y -\mu_x }{\sqrt{\frac{1}{n}+\frac{k}{m}}}}
+    {\sqrt{\frac{\frac{1}{k}\sum_{i=1}^{m}{({y_i-\bar{y}})^2}+\sum_{i=1}^{n}{({x_i-\bar{x}})^2}}{n+m-2}}}   
+\]\\
+\[
+    = 
+    \frac{\frac{\bar{X} -\bar{Y} +\mu_y -\mu_x }{\sqrt{\frac{1}{n}+\frac{k}{m}}}}
+    {\sqrt{\frac{\frac{m-1}{k}S^2_y + (n-1)S^2_x}{n+m-2}}}  
+    \sim T(n+m-2) 
+\]
